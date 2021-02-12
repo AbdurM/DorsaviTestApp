@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DorsaviTestApp.Views.MainPage"
-             Title="{Binding Title}">
+<ContentPage
+    x:Class="DorsaviTestApp.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="Welcome" />
-        <Label Text="This is a test app developed by"/>
-        <Label Text="{Binding DeveloperName}"/>
-        <Button Text="Begin" Command="{Binding BeginCommand}"/>
+        <Label Text="This is a test app developed by" />
+        <Label Text="{Binding DeveloperName}" />
+        <Button Command="{Binding BeginCommand}" Text="Begin" />
     </StackLayout>
 
 </ContentPage>
