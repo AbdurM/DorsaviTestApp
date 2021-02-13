@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using DorsaviTestApp.Views;
+using Prism.Commands;
 using Prism.Navigation;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -24,8 +25,6 @@ namespace DorsaviTestApp.ViewModels
         public MainPageViewModel(INavigationService navigationService )
             : base(navigationService)
         {
-            Title = "Main Page";
-
             BeginCommand = new DelegateCommand(async () => await NavigateToHomePageAsync());
 
             PreparePageBindings();
@@ -33,7 +32,7 @@ namespace DorsaviTestApp.ViewModels
 
         private async Task NavigateToHomePageAsync()
         {
-            await NavigationService.NavigateAsync("HomePage");
+            await NavigationService.NavigateAsync($"{ViewNames.NavigationPage}/{ViewNames.HomePage}");
         }
 
         #endregion constructors
