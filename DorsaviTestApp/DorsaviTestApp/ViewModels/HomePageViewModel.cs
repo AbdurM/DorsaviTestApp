@@ -1,5 +1,7 @@
-﻿using DorsaviTestApp.Models;
+﻿using DorsaviTestApp.Constants;
+using DorsaviTestApp.Models;
 using DorsaviTestApp.Services.Interfaces;
+using DorsaviTestApp.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -49,7 +51,7 @@ namespace DorsaviTestApp.ViewModels
 
         private async Task NavigateToSettingsPageAsync()
         {
-            await NavigationService.NavigateAsync("SettingsPage");
+            await NavigationService.NavigateAsync(ViewNames.SettingsPage);
         }
         #endregion
     }
