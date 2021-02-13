@@ -1,61 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             Title="Home"
-             x:Class="DorsaviTestApp.Views.HomePage">
+<ContentPage
+    x:Class="DorsaviTestApp.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    Title="Home"
+    prism:ViewModelLocator.AutowireViewModel="True">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Settings" Command="{Binding SettingsCommand}"/>
+        <ToolbarItem Command="{Binding SettingsCommand}" Text="Settings" />
     </ContentPage.ToolbarItems>
     <StackLayout>
         <BoxView
-             VerticalOptions="Start"
-             HorizontalOptions="FillAndExpand"
-             BackgroundColor="LightGray"
-             HeightRequest="2"/>
-    <!-- Person List-->
-    <CollectionView
-        ItemsSource="{Binding PeopleCollection}"
-        HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Grid HeightRequest="75"
-                      ColumnDefinitions="*,*,*"
-                      RowDefinitions="*,*">
-                    <!--Name-->
-                    <Label Margin="10,10,0,0"
-                           Text="{Binding Name}"/>
-                    <!--Gender-->
-                    <Label Margin="10,0,0,15"
-                           Grid.Row="1"
-                           Text="{Binding Gender}"/>
-                    <Label Grid.Column="1"
-                           Grid.RowSpan="2"
-                           VerticalOptions="Center"
-                           Text="{Binding Age, StringFormat='Age: {0}'}"
-                           HorizontalOptions="Center" />
-                    <!--Chevron Right-->
-                    <Label
-                        Grid.Column="2"
-                        Grid.RowSpan="2"
-                        Margin="0,0,10,0"
-                        VerticalOptions="Center"
-                        FontSize="Title"
-                        HorizontalOptions="EndAndExpand"
-                        Text="&#8250;"/>
-                    <!--Divider-->
-                    <BoxView
-                        Grid.Row="1"
-                        VerticalOptions="EndAndExpand"
-                        HorizontalOptions="FillAndExpand"
-                        Grid.ColumnSpan="3"
-                        BackgroundColor="LightGray"
-                        HeightRequest="2"/>
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
-  </StackLayout>
+            BackgroundColor="LightGray"
+            HeightRequest="2"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Start" />
+        <!--  Person List  -->
+        <CollectionView
+            HorizontalOptions="FillAndExpand"
+            ItemsSource="{Binding PeopleCollection}"
+            VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid
+                        ColumnDefinitions="*,*,*"
+                        HeightRequest="75"
+                        RowDefinitions="*,*">
+                        <!--  Name  -->
+                        <Label Margin="10,10,0,0" Text="{Binding Name}" />
+                        <!--  Gender  -->
+                        <Label
+                            Grid.Row="1"
+                            Margin="10,0,0,15"
+                            Text="{Binding Gender}" />
+                        <Label
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            HorizontalOptions="Center"
+                            Text="{Binding Age, StringFormat='Age: {0}'}"
+                            VerticalOptions="Center" />
+                        <!--  Chevron Right  -->
+                        <Label
+                            Grid.RowSpan="2"
+                            Grid.Column="2"
+                            Margin="0,0,10,0"
+                            FontSize="Title"
+                            HorizontalOptions="EndAndExpand"
+                            Text="&#8250;"
+                            VerticalOptions="Center" />
+                        <!--  Divider  -->
+                        <BoxView
+                            Grid.Row="1"
+                            Grid.ColumnSpan="3"
+                            BackgroundColor="LightGray"
+                            HeightRequest="2"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="EndAndExpand" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>

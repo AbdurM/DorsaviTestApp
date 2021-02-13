@@ -8,23 +8,24 @@
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
         <StackLayout.Resources>
             <Style TargetType="Label">
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="Large" />
             </Style>
         </StackLayout.Resources>
-        <Label Text="Welcome" FontSize="Title"/>
-        <Label Text="This is a test app developed by" Margin="0,50,0,0"/>
+        <Label FontSize="Title" Text="Welcome" />
+        <Label Margin="0,50,0,0" Text="This is a test app developed by" />
         <Label Text="{Binding DeveloperName}" TextDecorations="Underline" />
-        <Button Command="{Binding BeginCommand}"
-                Text="Begin"
-                FontSize="Medium"
-                Margin="30,50"
-                TextColor="White"
-                FontAttributes="Bold"
-                BackgroundColor="Blue"
-                BorderWidth="0.5"
-                BorderColor="Black" />
+        <Button
+            Margin="30,50"
+            BackgroundColor="Blue"
+            BorderColor="Black"
+            BorderWidth="0.5"
+            Command="{Binding BeginCommand}"
+            FontAttributes="Bold"
+            FontSize="Medium"
+            Text="Begin"
+            TextColor="White" />
     </StackLayout>
 
 </ContentPage>
