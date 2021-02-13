@@ -108,7 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DorsaviTestApp\DorsaviTestApp.csproj">
-      <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
+      <Project>{16C5E109-7EE4-4DE9-93CA-6C5A38DCE27F}</Project>
       <Name>DorsaviTestApp</Name>
     </ProjectReference>
   </ItemGroup>

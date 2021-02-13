@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace DorsaviTestApp.ViewModels
 {
@@ -15,16 +17,32 @@ namespace DorsaviTestApp.ViewModels
         private readonly IPersonService _personService;
         #endregion
 
+        #region properties
+        public string DeveloperName { get; set; }
+        #endregion
+
+
+        #region Commands
+        public ICommand BeginCommand { get; }
+        #endregion
+
         #region constructors
         public MainPageViewModel(INavigationService navigationService, 
             IPersonService personService)
             : base(navigationService)
         {
             Title = "Main Page";
+
             _personService = personService;
+            BeginCommand = new DelegateCommand(async()=> await NavigateToHomePageAsync());
 
             PreparePageBindings();
              
+        }
+
+        private async Task NavigateToHomePageAsync()
+        {
+            await NavigationService.NavigateAsync("HomePage");
         }
 
 
@@ -33,6 +51,7 @@ namespace DorsaviTestApp.ViewModels
         #region private methods
         private async void PreparePageBindings()
         {
+            DeveloperName = "Abdur Mohammed";
             var result = await _personService.GetPeople();
         }
         #endregion
