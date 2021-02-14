@@ -5,7 +5,7 @@ namespace DorsaviTestApp.Views
     {
         public const string HomePage = "HomePage";
         public const string NavigationPage = "NavigationPage";
-        public const string WelcomePage = "MainPage";
+        public const string WelcomePage = "WelcomePage";
         public const string SettingsPage = "SettingsPage";
     }
 }

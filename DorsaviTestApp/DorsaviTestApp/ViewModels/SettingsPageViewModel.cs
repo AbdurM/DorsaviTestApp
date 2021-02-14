@@ -4,6 +4,7 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -35,7 +36,8 @@ namespace DorsaviTestApp.ViewModels
             }
             catch (Exception ex)
             {
-                // An unexpected error occured. No browser may be installed on the device.
+                //Would use logging to relevant platform(ex raygun) in prod
+                Debug.WriteLine(ex.Message);
             }
         }
         #endregion

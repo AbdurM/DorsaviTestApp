@@ -1,9 +1,9 @@
 ﻿
 namespace DorsaviTestApp.Views
 {
-    public partial class MainPage
+    public partial class WelcomePage
     {
-        public MainPage()
+        public WelcomePage()
         {
             InitializeComponent();
         }

@@ -35,7 +35,7 @@ namespace DorsaviTestApp.Services.Implementations
             }
             catch(Exception ex)
             {
-                //Log any errors using relevant implementation (Ex using loggly raygun etc)
+                //Would use logging to relevant platform(ex raygun) in prod
                 Debug.WriteLine(ex.Message);
             }
 

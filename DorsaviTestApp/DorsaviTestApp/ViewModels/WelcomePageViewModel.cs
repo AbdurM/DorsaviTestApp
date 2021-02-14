@@ -6,7 +6,7 @@ using System.Windows.Input;
 
 namespace DorsaviTestApp.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class WelcomePageViewModel : ViewModelBase
     {
         #region properties
 
@@ -22,7 +22,7 @@ namespace DorsaviTestApp.ViewModels
 
         #region constructors
 
-        public MainPageViewModel(INavigationService navigationService )
+        public WelcomePageViewModel(INavigationService navigationService )
             : base(navigationService)
         {
             BeginCommand = new DelegateCommand(async () => await NavigateToHomePageAsync());
@@ -37,7 +37,7 @@ namespace DorsaviTestApp.ViewModels
 
         #endregion constructors
 
-        #region private methods
+        #region methods
 
         private async void PreparePageBindings()
         {
