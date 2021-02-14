@@ -23,35 +23,35 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid
-                        ColumnDefinitions="*,*,*"
+                        ColumnDefinitions="2*,*"
                         HeightRequest="75"
                         RowDefinitions="*,*">
                         <!--  Name  -->
-                        <Label Margin="10,10,0,0" Text="{Binding Name}" />
+                        <Label Margin="20,10,0,0" Text="{Binding Name}" />
                         <!--  Gender  -->
                         <Label
                             Grid.Row="1"
-                            Margin="10,0,0,15"
-                            Text="{Binding Gender}" />
+                            Grid.ColumnSpan="2"
+                            Margin="20,0,0,15"
+                            Text="{Binding Gender,StringFormat='Gender: {0}'}" />
                         <Label
-                            Grid.RowSpan="2"
                             Grid.Column="1"
-                            HorizontalOptions="Center"
+                            HorizontalOptions="Start"
                             Text="{Binding Age, StringFormat='Age: {0}'}"
                             VerticalOptions="Center" />
-                        <!--  Chevron Right  -->
+
                         <Label
-                            Grid.RowSpan="2"
-                            Grid.Column="2"
-                            Margin="0,0,10,0"
-                            FontSize="Title"
-                            HorizontalOptions="EndAndExpand"
-                            Text="&#8250;"
-                            VerticalOptions="Center" />
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            HorizontalOptions="Start"
+                            TextColor="DarkSlateGray"
+                            Text="{Binding PetCount, StringFormat='Pet Count: {0}'}"
+                            VerticalOptions="Start" />
+
                         <!--  Divider  -->
                         <BoxView
                             Grid.Row="1"
-                            Grid.ColumnSpan="3"
+                            Grid.ColumnSpan="2"
                             BackgroundColor="LightGray"
                             HeightRequest="2"
                             HorizontalOptions="FillAndExpand"

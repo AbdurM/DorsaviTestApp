@@ -21,6 +21,15 @@ namespace DorsaviTestApp.Models
         [JsonProperty("pets")]
         public List<Pet> Pets { get; set; }
 
+        [JsonIgnore]
+        public int PetCount
+        {
+            get
+            {
+                return Pets?.Count() ?? 0;
+            }
+        }
+
     }
 
 }
