@@ -8,18 +8,54 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Settings" Command="{Binding SettingsCommand}"/>
     </ContentPage.ToolbarItems>
-
+    <StackLayout>
+        <BoxView
+             VerticalOptions="Start"
+             HorizontalOptions="FillAndExpand"
+             BackgroundColor="LightGray"
+             HeightRequest="2"/>
+    <!-- Person List-->
     <CollectionView
         ItemsSource="{Binding PeopleCollection}"
         HorizontalOptions="FillAndExpand"
         VerticalOptions="FillAndExpand">
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <StackLayout>
-                    <Label HeightRequest="50" Text="{Binding Name}"/>
-                </StackLayout>
+                <Grid HeightRequest="75"
+                      ColumnDefinitions="*,*,*"
+                      RowDefinitions="*,*">
+                    <!--Name-->
+                    <Label Margin="10,10,0,0"
+                           Text="{Binding Name}"/>
+                    <!--Gender-->
+                    <Label Margin="10,0,0,15"
+                           Grid.Row="1"
+                           Text="{Binding Gender}"/>
+                    <Label Grid.Column="1"
+                           Grid.RowSpan="2"
+                           VerticalOptions="Center"
+                           Text="{Binding Age, StringFormat='Age: {0}'}"
+                           HorizontalOptions="Center" />
+                    <!--Chevron Right-->
+                    <Label
+                        Grid.Column="2"
+                        Grid.RowSpan="2"
+                        Margin="0,0,10,0"
+                        VerticalOptions="Center"
+                        FontSize="Title"
+                        HorizontalOptions="EndAndExpand"
+                        Text="&#8250;"/>
+                    <!--Divider-->
+                    <BoxView
+                        Grid.Row="1"
+                        VerticalOptions="EndAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        Grid.ColumnSpan="3"
+                        BackgroundColor="LightGray"
+                        HeightRequest="2"/>
+                </Grid>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
-  
+  </StackLayout>
 </ContentPage>
